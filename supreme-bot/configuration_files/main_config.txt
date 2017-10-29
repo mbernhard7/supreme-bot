@@ -1,0 +1,29 @@
+#Settings - setting?key&value
+setting?refresh_delay&3
+setting?timeout&10
+setting?fill_form&y
+setting?optimize_carts&y
+setting?manual_checkout&n
+setting?ajax_checkout&y
+#
+#
+#Items - Fill in desired items.
+#format is itemx?category&keyword&color&size
+#for items with no size, or items where you want the default size, put ‘default’
+item1?accessories&sock&black&default
+#
+#
+#Checkout Profiles - fill in checkout profiles
+#checkoutx?key&value
+checkout1?name&Ross Business
+checkout1?email&testtesttest@gmail.com
+checkout1?phone&(617) 123-1234
+checkout1?address&701 Tappan Ave
+checkout1?zipcode&48109
+checkout1?city&Ann Arbor
+checkout1?state&MI
+checkout1?country&USA
+checkout1?card_number&4111 1111 1111 1111
+checkout1?card_month&12
+checkout1?card_year&2022
+checkout1?cvv&123
