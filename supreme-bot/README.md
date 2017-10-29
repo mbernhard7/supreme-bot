@@ -1,14 +1,14 @@
 Supreme Bot
 Created by Miles Bernhard
 
-This is a bot for supremenewyork.com.
-
-For operation, the user needs to edit the main_config.txt file. The instructions to do so are included. Don’t leave any blank lines or break any of the conventions described. The checkout information included is for testing purposes, and the order will not go through. If the user wants to use AJAX checkouts in order to try and bypass captcha (will be explained later) they will also need to fill in the captcha_config.txt file. The convention for that file is key&value. Do not leave blank lines or lines that don’t follow this convention. Do not change the sitekey (unless you know what you’re doing), the supreme.py file will do this automatically. The API key needed is from 2captcha.com, a captcha solving api. The useragents.txt and captcha_tokens.txt files do not need to be changed.
+This is a bot for supremenewyork.com. The original code is on supreme.py and captcha_harvester.py
 
 How this bot works is as follows:
 1. It reads the config file and sets up separate Tasks, each with its own cart, each with item(s) inside.
 2. For each task, it will add the items to cart
 3. It will attempt to checkout based on the method the user specified in the config file.
+
+For operation, the user needs to edit the main_config.txt file. The instructions to do so are included. Don’t leave any blank lines or break any of the conventions described. The checkout information included is for testing purposes, and the order will not go through. If the user wants to use AJAX checkouts in order to try and bypass captcha (will be explained later) they will also need to fill in the captcha_config.txt file. The convention for that file is key&value. Do not leave blank lines or lines that don’t follow this convention. Do not change the sitekey (unless you know what you’re doing), the supreme.py file will do this automatically. The API key needed is from 2captcha.com, a captcha solving api. The useragents.txt and captcha_tokens.txt files do not need to be changed.
 
 The methods of checkout are “manually”, or through an AJAX POST request. 
 
