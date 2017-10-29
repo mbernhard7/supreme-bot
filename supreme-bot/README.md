@@ -8,11 +8,11 @@ How this bot works is as follows:
 2. For each task, it will add the items to cart
 3. It will attempt to checkout based on the method the user specified in the config file.
 
-The code is written by myself, with the exception of the twocaptcha API wrapper which I sourced from github and tweaked to my liking, and a few code snippets from stackoverflow that are all linked. Some elements (like the way I load configs, or the get_local_directory functions), came from older programs that I wrote, and may have been previously inspired by other’s work on stackoverflow or github, but at this point are common knowledge.
+I wrote the code, with the exception of the twocaptcha API wrapper which I sourced from github and tweaked to my liking, and a few code snippets from stackoverflow that are all linked. Some elements (like the way I load configs, or the get_local_directory functions), came from older programs that I wrote, and may have been previously inspired by other’s work on stackoverflow or github, but at this point are common knowledge.
 
 Going forward, I plan on a few upgrades. In order by priority:
-1. Multithreading captcha token requests
-2. Multithreading tasks
+1. Multi-threading captcha token requests
+2. Multi-threading tasks
 3. Proxy integration
 4. Adding to cart by AJAX request 
 
@@ -20,11 +20,11 @@ For operation, the user needs to edit the main_config.txt file. The instructions
 
 The methods of checkout are “manually”, or through an AJAX POST request. 
 
-The manual checkout method is more likely to be successful, and easier to troubleshoot in the event of something going wrong, but it’s slower. It requires you to solve the captcha supreme presents you manually (however, sometimes they don’t prompt you at all).
+The manual checkout method is more likely to be successful, and easier to troubleshoot in the event of something going wrong, but it’s slower. It requires you to solve the captcha Supreme presents you manually (however, sometimes they don’t prompt you at all).
 
 To do this, simply fill in the main_config.txt, and run the supreme.py program however you would like (Terminal —> Python path/to/supreme.py)
 
-The AJAX method is faster, but it’s more fragile and is hit or miss. If it fails, it will be difficult to attempt to checkout again. As of now, it fills in the checkout form in order to get a few cookies that supreme sets, and then sends the request itself rather than clicking the button. This bypasses the manual solving of the captcha, instead sending one of the tokens harvested from the 2captcha API (a captcha solving API).
+The AJAX method is faster, but it’s more fragile and is hit or miss. If it fails, it will be difficult to attempt to checkout again. As of now, it fills in the checkout form in order to get a few cookies that Supreme sets, and then sends the request itself rather than clicking the button. This bypasses the manual solving of the captcha, instead sending one of the tokens harvested from the 2captcha API (a captcha solving API).
 
 To run this program, it’s important to fill out both config files. You will then start the captcha_harvester.py (Terminal —> Python path/to/captcha_harvester.py). Wait until it has a satisfactory amount of tokens in the pool (normally one per cart), then in a separate terminal window run the supreme.py file (Terminal —> Python path/to/supreme.py).
 
