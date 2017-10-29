@@ -8,6 +8,14 @@ How this bot works is as follows:
 2. For each task, it will add the items to cart
 3. It will attempt to checkout based on the method the user specified in the config file.
 
+The code is written by myself, with the exception of the twocaptcha API wrapper which I sourced from github and tweaked to my liking, and a few code snippets from stackoverflow that are all linked. Some elements (like the way I load configs, or the get_local_directory functions), came from older programs that I wrote, and may have been previously inspired by other’s work on stackoverflow or github, but at this point are common knowledge.
+
+Going forward, I plan on a few upgrades. In order by priority:
+1. Multithreading captcha token requests
+2. Multithreading tasks
+3. Proxy integration
+4. Adding to cart by AJAX request 
+
 For operation, the user needs to edit the main_config.txt file. The instructions to do so are included. Don’t leave any blank lines or break any of the conventions described. The checkout information included is for testing purposes, and the order will not go through. If the user wants to use AJAX checkouts in order to try and bypass captcha (will be explained later) they will also need to fill in the captcha_config.txt file. The convention for that file is key&value. Do not leave blank lines or lines that don’t follow this convention. Do not change the sitekey (unless you know what you’re doing), the supreme.py file will do this automatically. The API key needed is from 2captcha.com, a captcha solving api. The useragents.txt and captcha_tokens.txt files do not need to be changed.
 
 The methods of checkout are “manually”, or through an AJAX POST request. 
@@ -48,11 +56,3 @@ six (1.10.0)
 tldextract (2.1.0)
 urllib3 (1.22)
 wheel (0.30.0)
-
-The code is written by myself, with the exception of the twocaptcha API wrapper which I sourced from github and tweaked to my liking, and a few code snippets from stackoverflow that are all linked. Some elements (like the way I load configs, or the get_local_directory functions), came from older programs that I wrote, and may have been previously inspired by other’s work on stackoverflow or github, but at this point are common knowledge.
-
-Going forward, I plan on a few upgrades. In order by priority:
-1. Multithreading captcha token requests
-2. Multithreading tasks
-3. Proxy integration
-4. Adding to cart by AJAX request 
